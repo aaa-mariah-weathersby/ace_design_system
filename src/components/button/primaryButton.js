@@ -12,6 +12,9 @@ class PrimaryButton extends Component {
     return ( 
       <ButtonBase 
         onClick = {this.props.onClick}
+        classes = {{
+          root: 'primary_button button'
+        }}
       />
     )
   }

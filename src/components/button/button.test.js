@@ -14,10 +14,22 @@ describe('Primary Button', () => {
     //     />
     // )
 
+    beforeEach(() => {
+
+    })
+
+    test('defualt behavior renders primary button element with primary_button class', () => {
+
+        const component = mount(<PrimaryButton />)
+        
+        expect(component.find('button').hasClass('primary_button')).toBe(true)
+
+    });
+
     test('calls onClick function on click behavior', () => {
 
-        const component = shallow(<PrimaryButton onClick={clickListener}/>)
         const clickListener = jest.fn()
+        const component = shallow(<PrimaryButton onClick={clickListener}/>)
 
         component.simulate('click')
 
