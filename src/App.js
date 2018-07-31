@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Button from '../src/components/button/button'
+import PrimaryButton from '../src/components/button/primaryButton'
 
 class App extends Component {
   render() {
@@ -16,7 +16,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        {/* <Button
+        {/* <PrimaryButton
           label="testing"
         /> */}
 
