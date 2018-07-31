@@ -8,18 +8,11 @@ import { shallow, mount } from 'enzyme';
 
 describe('Primary Button', () => {
 
-    // const component = shallow(
-    //     <PrimaryButton 
-    //         onClick={clickListener}
-    //     />
-    // )
-
     beforeEach(() => {
 
     })
 
     test('defualt behavior renders primary button element with primary_button class', () => {
-
         const component = mount(<PrimaryButton />)
         
         expect(component.find('button').hasClass('primary_button')).toBe(true)
@@ -27,7 +20,6 @@ describe('Primary Button', () => {
     });
 
     test('calls onClick function on click behavior', () => {
-
         const clickListener = jest.fn()
         const component = shallow(<PrimaryButton onClick={clickListener}/>)
 

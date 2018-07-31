@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ButtonBase from '@material-ui/core/Button';
 
+import './styles/primary/primaryButton.css'
+
 class PrimaryButton extends Component {
 
   state = {
@@ -15,6 +17,8 @@ class PrimaryButton extends Component {
         classes = {{
           root: 'primary_button button'
         }}
+
+        // component={'div'}
       />
     )
   }

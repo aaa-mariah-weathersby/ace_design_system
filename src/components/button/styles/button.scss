@@ -1,0 +1,8 @@
+@import '../../../globals/styles/base/variables.scss';
+@import '../../../globals/styles/base/animations.scss';
+
+@import '../../../globals/styles/layout/layout.scss';
+
+.button {
+    background-color: $blue-primary;
+}
