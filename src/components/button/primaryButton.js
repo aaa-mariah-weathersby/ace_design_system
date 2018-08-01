@@ -16,6 +16,7 @@ class PrimaryButton extends Component {
     return ( 
       <ButtonBase 
         onClick = {this.props.onClick}
+
         disableRipple = {true}
         disableTouchRipple = {true}
         focusRipple = {false}
@@ -26,7 +27,7 @@ class PrimaryButton extends Component {
 
         children = { 
           <ButtonLabel
-            label={"testing"}
+            label={this.props.label}
           />
         }
       />

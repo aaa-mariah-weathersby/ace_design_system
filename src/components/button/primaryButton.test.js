@@ -43,6 +43,15 @@ describe('Primary Button', () => {
 
     })
 
+    test('renders button with label copy', () => {
+        const labelCopy = "primary label"
+        const component = mount(<PrimaryButton label={labelCopy} />)
+
+        expect(component.find('.button_label').length).toBe(1)
+        expect(component.find('.button_label').text()).toBe(labelCopy)
+
+    });
+
     test('calls onClick function on click behavior', () => {
         const clickListener = jest.fn()
         const component = shallow(<PrimaryButton onClick={clickListener}/>)
