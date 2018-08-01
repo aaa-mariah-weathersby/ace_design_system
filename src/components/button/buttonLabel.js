@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import './styles/primary/primaryButton.css'
+import './styles/buttonLabel/buttonLabel.css'
 
 const ButtonLabel = (props) => {
     return (

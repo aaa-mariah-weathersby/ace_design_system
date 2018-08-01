@@ -3,6 +3,8 @@
 
 @import '../../../globals/styles/layout/layout.scss';
 
-.button {
-    background-color: $blue-primary;
+button.button {
+    font-family: $font-stack;
+    font-weight: 200;
+
 }

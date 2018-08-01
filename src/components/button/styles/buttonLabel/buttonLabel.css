@@ -218,3 +218,9 @@
 button.button {
   font-family: "Roboto";
   font-weight: 200; }
+
+.button_label {
+  color: inherit;
+  font-weight: 200;
+  text-transform: none;
+  margin: .5em; }

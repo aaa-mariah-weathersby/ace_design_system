@@ -36,8 +36,8 @@ class PrimaryButton extends Component {
 
 }
 
-// Button.propTypes = {
-//   label: PropTypes.string.isRequired
-// };
+PrimaryButton.propTypes = {
+  label: PropTypes.string.isRequired
+};
 
 export default PrimaryButton;
