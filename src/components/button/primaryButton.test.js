@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PrimaryButton from './primaryButton';
+import ButtonLabel from './buttonLabel'
 import ButtonBase from '@material-ui/core/Button';
 
 import { shallow, mount } from 'enzyme';
@@ -19,6 +20,14 @@ describe('Primary Button', () => {
 
     });
 
+    test('defualt behavior renders ButtonLabel child component', () => {
+        const component = shallow(<PrimaryButton />)
+
+        expect(component.find(ButtonLabel).length).toBe(1) 
+        expect(component.props().children.type).toBe(ButtonLabel) 
+
+    });
+
     test('default ripple behaviors have been disabled', () => {
         const defaultProps = {
             disableRipple: true,
@@ -31,7 +40,7 @@ describe('Primary Button', () => {
         expect(componentProps.disableRipple).toBe(defaultProps.disableRipple)
         expect(componentProps.disableTouchRipple).toBe(defaultProps.disableTouchRipple)
         expect(componentProps.focusRipple).toBe(defaultProps.focusRipple)
-        
+
     })
 
     test('calls onClick function on click behavior', () => {
