@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i");
 @-webkit-keyframes ghost-out {
   from {
     max-height: 65px;
@@ -219,11 +222,32 @@ button.button {
   font-family: "Roboto";
   font-weight: 200; }
 
-.primary_button.button {
-  background-color: #09f;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5); }
-  .primary_button.button:hover {
-    background-color: #09f; }
-  .primary_button.button .button_label {
-    color: white; }
+.primary_button {
+  color: white;
+  background-color: white;
+  border: 1px solid #09f;
+  -webkit-transition:;
+  -moz-transition:;
+  -ms-transition:;
+  -o-transition:;
+  transition:;
+  -webkit-transition:;
+  -moz-transition:;
+  -ms-transition:;
+  -o-transition:;
+  transition:; }
+  .primary_button .button_label {
+    color: #09f; }
+  .primary_button.active {
+    background-color: #09f;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+    .primary_button.active .button_label {
+      color: white; }
+  .primary_button.disabled {
+    background-color: #CCCCCC;
+    border-color: #CCCCCC;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+    .primary_button.disabled .button_label {
+      color: white; }

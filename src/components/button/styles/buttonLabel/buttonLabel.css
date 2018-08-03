@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i");
 @-webkit-keyframes ghost-out {
   from {
     max-height: 65px;
@@ -221,6 +224,6 @@ button.button {
 
 .button_label {
   color: inherit;
-  font-weight: 200;
+  font-weight: 400;
   text-transform: none;
   margin: .5em; }

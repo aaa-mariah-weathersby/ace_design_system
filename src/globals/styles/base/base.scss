@@ -1,5 +1,16 @@
 @import 'variables.scss';
+@import 'mixins.scss';
 
 body {
-    background-color: $blue-primary;
+}
+
+// -- Fonts -- //
+// @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i');
+
+h1 {
+    @include font-presets(
+        $size: 32pt, 
+        $weight: 700,  
+        $lh: auto        
+    )
 }

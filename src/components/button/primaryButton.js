@@ -6,12 +6,13 @@ import ButtonLabel from './buttonLabel';
 // import './styles/primary/primaryButton.css'
 import styles from './styles/primary/primaryButton.scss'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { inherits } from 'util';
 
 
 class PrimaryButton extends Component {
 
-
   state = {
+    state: null
 
   };
 
@@ -19,13 +20,22 @@ class PrimaryButton extends Component {
     overrides: {
       MuiButtonBase: {
         root: {
-          backgroundColor: 'rgba(0, 153, 255, 1)',
+          backgroundColor: inherits,
+          border: inherits
         }
       }
     }
   })
 
   render = () => {
+
+    var rootClasses = 
+      this.props.active == true 
+      ? `${styles.active} active`
+      : this.props.active == false 
+        ? `${styles.disabled} disabled`
+        : `idle`
+
 
     return ( 
       <MuiThemeProvider theme={this.themeOverride}>
@@ -37,12 +47,15 @@ class PrimaryButton extends Component {
           focusRipple = {false}
 
           classes = {{
-            root: styles.primary_button
+            root: `${styles.primary_button} ${rootClasses} primary_button`
           }}
 
           children = { 
             <ButtonLabel
               label={this.props.label}
+              classes={
+                styles.button_label
+              }
             />
           }
         />

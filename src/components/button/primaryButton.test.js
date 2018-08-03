@@ -63,5 +63,12 @@ describe('Primary Button', () => {
 
     });
 
+    test.only('active=null property renders an idle button', () => {
+        const component = mount(<PrimaryButton active={true}/>)
+        console.log("active null: ", component.debug())
+
+    })
+
+
 })
 

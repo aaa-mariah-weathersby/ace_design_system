@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import './globals/styles/base/base.css'
+
 import PrimaryButton from '../src/components/button/primaryButton'
 
 class App extends Component {
@@ -18,6 +20,7 @@ class App extends Component {
 
         <PrimaryButton
           label={"testing"}
+          // active={false}
         />
 
       </div>
