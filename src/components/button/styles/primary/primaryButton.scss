@@ -1,13 +1,14 @@
 @import '../button.scss';
 
-.primary_button.button {
+.primary_button {
+    background: $blue-primary;
     background-color: $blue-primary;
     
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 
     &:hover {
-        background-color: $blue-primary;
+        background: $blue-primary;
 
     }
 
