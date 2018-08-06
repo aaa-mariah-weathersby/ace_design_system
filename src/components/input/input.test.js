@@ -26,15 +26,25 @@ describe.only('Input Field', () => {
         
         expect(wrapperChild_input.length).toBe(1) 
         expect(wrapperChild_label.length).toBe(1) 
+  
     });
 
 
-    test ("type prop updates input_fiel type property", () => {
+    test ("type prop updates input_field type property", () => {
         const component = mount(<Input type={'number'} />)
         const inputField = component.find('input.input_field')
 
         expect(inputField.props().type).toBe('number') 
   
+    })
+
+    test ("label prop updates input_label innerHTML", () => {
+        const ELlabel = "label_test"
+        const component = mount(<Input label={ELlabel} />)
+        const inputLabel= component.find('label.input_label')
+
+        expect(inputLabel.text()).toBe(ELlabel) 
+
     })
 
 })

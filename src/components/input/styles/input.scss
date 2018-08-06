@@ -1,0 +1,11 @@
+@import '../../../globals/styles/base/variables.scss';
+
+.input{
+    border: solid $gray-primary thin; 
+    border-radius: 4px;
+
+    .input_field {
+        padding: 10px 12px;
+    }
+
+}

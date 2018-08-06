@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i");
+.input {
+  border: solid #ced4da thin;
+  border-radius: 4px; }
+  .input .input_field {
+    padding: 10px 12px; }
