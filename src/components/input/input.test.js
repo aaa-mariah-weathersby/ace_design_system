@@ -18,20 +18,20 @@ describe.only('Input Field', () => {
 
     });
 
-
-    test('defualt behavior renders FormControl wrapper component', () => {
+    test('defualt behavior renders Input component and sibling label', () => {
         const component = mount(<Input />)
         const inputWrapper = component.find('.field_control')
-        const inputWrapperChild = inputWrapper.children().props()
-
-        expect(inputWrapperChild.classes.input).toBe('input_field') 
-
+        const wrapperChild_input = inputWrapper.find('input.input_field')
+        const wrapperChild_label = inputWrapper.find('label.input_label')
+        
+        expect(wrapperChild_input.length).toBe(1) 
+        expect(wrapperChild_label.length).toBe(1) 
     });
+
 
     test ("type prop updates input_fiel type property", () => {
         const component = mount(<Input type={'number'} />)
         const inputField = component.find('input.input_field')
-        console.log('component type: ', inputField.html() )
 
         expect(inputField.props().type).toBe('number') 
   

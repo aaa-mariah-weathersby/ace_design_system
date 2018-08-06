@@ -48,6 +48,14 @@ class Input extends Component {
                 root: `field_control`
             }}
         >
+            <InputLabelMUI
+                classes = {{
+                    formControl: `input_label`
+                }}
+            >
+                {/* {this.props.label}
+                testing */}
+            </InputLabelMUI>
             <InputMUI
                 disableUnderline = {true}
                 type = {this.props.type ? this.props.type : 'text' }
