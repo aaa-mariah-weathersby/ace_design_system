@@ -19,6 +19,15 @@
 
     }
 
+    &:hover {
+        background-color: $blue-primary;
+
+        .button_label {
+            color: $white;
+    
+        }
+    }
+
     &.active {
         background-color: $blue-primary;
         -webkit-box-shadow: none;
@@ -28,6 +37,7 @@
             color: $white;
 
         }
+
 
     }
 

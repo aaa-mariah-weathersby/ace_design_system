@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import ButtonBase from '@material-ui/core/Button';
 import ButtonLabel from './buttonLabel';
 
-// import './styles/primary/primaryButton.css'
 import styles from './styles/primary/primaryButton.scss'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { inherits } from 'util';
@@ -21,8 +20,12 @@ class PrimaryButton extends Component {
       MuiButtonBase: {
         root: {
           backgroundColor: inherits,
-          border: inherits
-        }
+          '&:hover': {
+            backgroundColor: inherits,
+          },
+          border: inherits,
+        },
+
       }
     }
   })
@@ -61,12 +64,13 @@ class PrimaryButton extends Component {
         />
       </MuiThemeProvider>
     )
+    
   }
 
 }
 
-PrimaryButton.propTypes = {
-  label: PropTypes.string.isRequired
-};
+// PrimaryButton.propTypes = {
+//   label: PropTypes.string.isRequired
+// };
 
 export default PrimaryButton;

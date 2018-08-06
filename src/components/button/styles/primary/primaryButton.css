@@ -238,6 +238,10 @@ button.button {
   transition:; }
   .primary_button .button_label {
     color: #09f; }
+  .primary_button:hover {
+    background-color: #09f; }
+    .primary_button:hover .button_label {
+      color: white; }
   .primary_button.active {
     background-color: #09f;
     -webkit-box-shadow: none;
