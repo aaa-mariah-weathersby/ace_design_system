@@ -5,6 +5,7 @@ import './App.css';
 import './globals/styles/main.css'
 
 import PrimaryButton from '../src/components/button/primaryButton'
+import Input from './components/input/input';
 
 class App extends Component {
 
@@ -28,6 +29,8 @@ class App extends Component {
           onClick={ () => { alert("hit")} }
           active={true}
         />
+        <br/>
+        <Input/>
 
       </div>
     );

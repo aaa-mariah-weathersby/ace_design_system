@@ -65,10 +65,33 @@ describe('Primary Button', () => {
     });
 
     test('active=null property renders an idle button', () => {
+        const component = mount(<PrimaryButton active={null}/>)
+        
+        expect(component.find('button.idle.primary_button').length).toBe(1)
+        expect(component.find('button.active.primary_button').length).toBe(0)
+        expect(component.find('button.disabled.primary_button').length).toBe(0)
+
+    });
+
+    test('active=true property renders an idle button', () => {
         const component = mount(<PrimaryButton active={true}/>)
+        
+        expect(component.find('button.idle.primary_button').length).toBe(0)
+        expect(component.find('button.active.primary_button').length).toBe(1)
+        expect(component.find('button.disabled.primary_button').length).toBe(0)
 
-    })
+    });
 
+
+    test('active=true property renders an idle button', () => {
+        const component = mount(<PrimaryButton active={false}/>)
+        
+        expect(component.find('button.idle.primary_button').length).toBe(0)
+        expect(component.find('button.active.primary_button').length).toBe(0)
+        expect(component.find('button.disabled.primary_button').length).toBe(1)
+        
+
+    });
 
 })
 
