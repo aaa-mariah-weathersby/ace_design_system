@@ -28,9 +28,17 @@ class App extends Component {
           label={"testing"}
           onClick={ () => { alert("hit")} }
           active={true}
+        />        <br/>
+
+        
+        <Input
+          label={"testing"}
         />
         <br/>
-        <Input/>
+
+        <Input
+          label={"testing"}
+        />
 
       </div>
     );

@@ -28,7 +28,14 @@ describe.only('Input Field', () => {
         expect(wrapperChild_label.length).toBe(1) 
   
     });
+    
+    test ("defualt type prop is 'text", () => {
+        const component = mount(<Input />)
+        const inputField = component.find('input.input_field')
 
+        expect(inputField.props().type).toBe('text') 
+  
+    })
 
     test ("type prop updates input_field type property", () => {
         const component = mount(<Input type={'number'} />)
@@ -46,5 +53,36 @@ describe.only('Input Field', () => {
         expect(inputLabel.text()).toBe(ELlabel) 
 
     })
+
+    test ("value prop assigns label name", () => {
+        const labelName = "label_name"
+        const component = mount(<Input name={labelName} />)
+        const inputEL= component.find('input.input_field')
+
+        expect(inputEL.props().name).toBe(labelName) 
+    })
+
+    test("onChange assigns the input targer value to the component state", () => {
+        const changeVal = "change_val"
+        const labelName = 'label_name'
+        const component = mount(<Input name={labelName} />)
+        const inputEL= component.find('input.input_field')
+        
+        inputEL.simulate('change', { target: { value: changeVal } });
+
+        expect(component.state()[labelName]).toBe(changeVal) 
+    })
+
+    test("callback prop is called onChange", () => {
+        const cbListenter = jest.fn()
+        const component = mount(<Input callback={cbListenter} />)
+        const inputEL= component.find('input.input_field')
+        
+        inputEL.simulate('change');
+
+        const clickListCount = cbListenter.mock.calls.length
+        expect(clickListCount).toBe(1);
+    })
+
 
 })

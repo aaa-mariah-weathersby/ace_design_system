@@ -17,18 +17,35 @@ class Input extends Component {
 
   };
 
+  handleChange = name => event => {
+    this.setState(
+        {[name]: event.target.value,},
+        () => {
+            if(this.props.callback)
+                this.props.callback(this)
+        }
+    );
+  };
+
   themeOverride = createMuiTheme({
     overrides: {
-      MuiInput: {
-    //     root: {
-    //       backgroundColor: inherits,
-    //       '&:hover': {
-    //         backgroundColor: inherits,
-    //       },
-    //       border: inherits,
-    //     },
-
-      }
+        MuiFormControl: {
+            root: {
+                margin: 'none',
+            }
+        },
+        MuiInputLabel: {
+            formControl: {
+                transform: 'inherit',
+                top: 'none',
+                fontSize: '0.9em'
+            },
+         },
+         MuiInput: {
+             focused: {
+                 border: '1.5px #0099FF solid'
+             }
+         }
     }
   })
 
@@ -41,31 +58,42 @@ class Input extends Component {
     //   ? `${styles.disabled} disabled`
     //   : `idle`
 
+
     return (
-        
-        <FormControlMUI
-            classes = {{
-                root: `field_control`
-            }}
-        >
-            <InputLabelMUI
+        <MuiThemeProvider theme={this.themeOverride}>
+            <FormControlMUI
                 classes = {{
-                    formControl: `input_label`
+                    root: `${styles.field_control} field_control`
                 }}
             >
-                {this.props.label}
-            </InputLabelMUI>
-            <InputMUI
-                disableUnderline = {true}
-                type = {this.props.type ? this.props.type : 'text' }
-                classes = {{
-                    root: `${styles.input} input`,
-                    // root: `input`,
-                    input: `${styles.input_field} input_field`
-                }}
-            
-            />
-        </FormControlMUI>
+
+                <InputLabelMUI
+                    classes = {{
+                        formControl: `${styles.input_label} input_label`,
+                        root: `${styles.input_label}`
+                    }}
+                    
+                    disableAnimation = {true}
+                    shrink={false}
+                >
+                    {this.props.label}
+                </InputLabelMUI>
+
+                <InputMUI
+                    disableUnderline = {true}
+                    type = {this.props.type ? this.props.type : 'text' }
+                    classes = {{
+                        root: `${styles.input} input`,
+                        // root: `input`,
+                        input: `${styles.input_field} input_field`,
+                        focused: `${styles.focused}`,
+                    }}
+                    name = {this.props.name}
+                    onChange={this.handleChange(this.props.name)}
+                
+                />
+            </FormControlMUI>
+        </MuiThemeProvider>
 
     )
 
