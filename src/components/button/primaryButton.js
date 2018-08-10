@@ -5,7 +5,6 @@ import ButtonLabel from './buttonLabel';
 
 import styles from './styles/primary/primaryButton.scss'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { inherits } from 'util';
 
 
 class PrimaryButton extends Component {
@@ -17,15 +16,17 @@ class PrimaryButton extends Component {
 
   themeOverride = createMuiTheme({
     overrides: {
+      MuiButton: {
+        root: {
+          '&:hover':{
+            backgroundColor: 'visible'
+          }
+        }
+      },
       MuiButtonBase: {
         root: {
-          backgroundColor: inherits,
-          '&:hover': {
-            backgroundColor: inherits,
-          },
-          border: inherits,
+          border: ''
         },
-
       }
     }
   })
@@ -33,9 +34,9 @@ class PrimaryButton extends Component {
   render = () => {
 
     var rootClasses = 
-      this.props.active == true 
+      this.props.active === true 
       ? `${styles.active} active`
-      : this.props.active == false 
+      : this.props.active === false 
         ? `${styles.disabled} disabled`
         : `idle`
 
@@ -52,6 +53,7 @@ class PrimaryButton extends Component {
           classes = {{
             root: `${styles.primary_button} ${rootClasses} primary_button`
           }}
+          disabled={false}
 
           children = { 
             <ButtonLabel
@@ -69,8 +71,11 @@ class PrimaryButton extends Component {
 
 }
 
-// PrimaryButton.propTypes = {
-//   label: PropTypes.string.isRequired
-// };
+PrimaryButton.propTypes = {
+  active: PropTypes.bool,
+  label: PropTypes.string,
+  onClick: PropTypes.func,
+
+};
 
 export default PrimaryButton;

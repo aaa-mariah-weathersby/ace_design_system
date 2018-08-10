@@ -12,7 +12,7 @@
     top: -0.65em;
     font-size: .9em;
 
-    @include transition($args: all .35s linear);
+    // @include transition($args: all .35s linear);
 
 
 }
@@ -26,10 +26,10 @@
 
     }
 
-    &:focus {
-        background: green;
-        border: solid green thin; 
+    // &:focus {
+    //     background: green;
+    //     border: solid green thin; 
 
-    }
+    // }
 
 }

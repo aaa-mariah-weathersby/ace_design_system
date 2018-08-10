@@ -7,7 +7,6 @@ import FormControlMUI from '@material-ui/core/FormControl';
 
 import styles from './styles/input.scss'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { inherits } from 'util';
 
 
 class Input extends Component {
@@ -28,6 +27,14 @@ class Input extends Component {
   };
 
   themeOverride = createMuiTheme({
+    palette: {
+        primary: {
+            main: '#0099ff',
+            dark: '#0099ff',
+            contrastText: '#0099ff',
+            light: '#0099ff',
+        },
+    },
     overrides: {
         MuiFormControl: {
             root: {
@@ -40,24 +47,18 @@ class Input extends Component {
                 top: 'none',
                 fontSize: '0.9em'
             },
-         },
+            root: {
+            },
+        },
          MuiInput: {
              focused: {
-                 border: '1.5px #0099FF solid'
+                 border: '1px #0099FF solid'
              }
          }
     }
   })
 
   render = () => {
-
-    // var rootClasses = 
-    // this.props.active == true 
-    // ? `${styles.active} active`
-    // : this.props.active == false 
-    //   ? `${styles.disabled} disabled`
-    //   : `idle`
-
 
     return (
         <MuiThemeProvider theme={this.themeOverride}>
@@ -101,4 +102,12 @@ class Input extends Component {
 
 }
 
+Input.propTypes = {
+    type: PropTypes.string,
+    name: PropTypes.string,
+    label: PropTypes.string
+  };
+  
+
 export default Input;
+// export default withStyles(themeStyles)(Input);

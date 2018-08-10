@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import './styles/buttonLabel/buttonLabel.css'
@@ -12,6 +12,10 @@ const ButtonLabel = (props) => {
         </h4>
     )
 
+};
+
+ButtonLabel.propTypes = {
+  label: PropTypes.string
 };
 
 export default ButtonLabel;
